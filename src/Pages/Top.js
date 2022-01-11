@@ -4,19 +4,12 @@ import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import { Typography } from '@mui/material';
 import axios from 'axios';
+import ProductCard from '../Parts/ProductCard';
 
-
-const Item = styled(Typography)`
-  text-align: center;
-  border: 2px solid #F2F2F2;
-  height: 100%;
-  border-radius: 1rem;
-  cursor: pointer;
-`
 
 const ItemGrid = styled(Grid)`
-  padding: 2rem;
-  height: 300px;
+  padding: 1rem;
+  text-align: center;
 `
 function Top() {
   const [products, setProducts] = useState([]);
@@ -28,10 +21,10 @@ function Top() {
     }, [])
     return (
         <Box sx={{ flexGrow: 1 }}>
-            <Grid container spacing={2} columns={{ xs: 4, sm: 8, md: 12 }}>
+            <Grid container spacing={4} columns={{ xs: 1, sm: 6, md: 12 }}>
                 {products.map((product, index) => (
                     <ItemGrid item xs={2} sm={4} md={3} key={index}>
-                      <Item>{product.ProductName}<br />{product.Price}円</Item>
+                      <ProductCard data={product} />
                     </ItemGrid>
                 ))}
             </Grid>

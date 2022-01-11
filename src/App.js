@@ -8,21 +8,29 @@ import logo from './logo.svg';
 import './App.css';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Top from './Pages/Top';
+import Header from './Parts/Header'
 
 const WrapperGrid = styled(Grid)`
+  width: 100%;
+  margin: auto;
+  margin-bottom: 4rem;
+`;
+const ContentsGrid = styled(Grid)`
   width: 90%;
   margin: auto;
-  margin-top: 4rem;
-  margin-bottom: 4rem;
+  margin-top: 8rem;
 `;
 function App() {
   return (
     <WrapperGrid>
-    <BrowserRouter>
-      <Switch>
-        <Route exact path="/" component={Top} />
-      </Switch>
-    </BrowserRouter>
+      <Header />
+      <ContentsGrid>
+        <BrowserRouter>
+          <Switch>
+            <Route exact path="/" component={Top} />
+          </Switch>
+        </BrowserRouter>
+      </ContentsGrid>
     </WrapperGrid>
   );
 }
