@@ -6,6 +6,8 @@ import Grid from '@mui/material/Grid';
 import { Typography } from '@mui/material';
 import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import Top from './Pages/Top';
 
 const WrapperGrid = styled(Grid)`
   width: 90%;
@@ -13,41 +15,14 @@ const WrapperGrid = styled(Grid)`
   margin-top: 4rem;
   margin-bottom: 4rem;
 `;
-
-const Item = styled(Typography)`
-  text-align: center;
-  border: 2px solid #F2F2F2;
-  height: 100%;
-  border-radius: 1rem;
-  cursor: pointer;
-`
-
-const ItemGrid = styled(Grid)`
-  padding: 2rem;
-  height: 300px;
-`
-const titles = [
-  {'title':'タイトル1'},
-  {'title':'タイトル2'},
-  {'title':'タイトル3'},
-  {'title':'タイトル4'},
-  {'title':'タイトル5'},
-  {'title':'タイトル6'},
-  {'title':'タイトル7'},
-  {'title':'タイトル8'},
-  ];
 function App() {
   return (
     <WrapperGrid>
-      <Box sx={{ flexGrow: 1 }}>
-      <Grid container spacing={2} columns={{ xs: 4, sm: 8, md: 12 }}>
-        {titles.map((data, index) => (
-          <ItemGrid item xs={2} sm={4} md={3} key={index}>
-            <Item>{data.title}</Item>
-          </ItemGrid>
-        ))}
-      </Grid>
-    </Box>
+    <BrowserRouter>
+      <Switch>
+        <Route exact path="/" component={Top} />
+      </Switch>
+    </BrowserRouter>
     </WrapperGrid>
   );
 }
