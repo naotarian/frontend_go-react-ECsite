@@ -6,9 +6,10 @@ import Grid from '@mui/material/Grid';
 import { Typography } from '@mui/material';
 import logo from './logo.svg';
 import './App.css';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Route, Switch, Link } from 'react-router-dom';
 import Top from './Pages/Top';
-import Header from './Parts/Header'
+import ProductDetail from './Pages/ProductDetail';
+import Header from './Parts/Header';
 
 const WrapperGrid = styled(Grid)`
   width: 100%;
@@ -28,6 +29,7 @@ function App() {
         <BrowserRouter>
           <Switch>
             <Route exact path="/" component={Top} />
+            <Route exact path="/product_detail" component={ProductDetail} />
           </Switch>
         </BrowserRouter>
       </ContentsGrid>

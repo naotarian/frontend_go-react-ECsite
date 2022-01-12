@@ -7,6 +7,9 @@ import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import styled from 'styled-components';
+import { BrowserRouter, Route, Switch, Link } from 'react-router-dom';
+// import ProductDetail from '../Pages/ProductDetail/test';
+import ProductDetail from "../Pages/ProductDetail";
 
 const ProductName = styled(Typography)`
   display: -webkit-box;
@@ -30,11 +33,19 @@ const Price = styled(Typography)`
 
 function ProductCard(data) {
   const [expanded, setExpanded] = React.useState(false);
+  let url = `http://${window.location.hostname}:8080`;
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
-
+  const to = {
+    pathname: '/product_detail',
+    search: '',
+    hash: '',
+    state: { data: data.data }
+  };
+  
+  
   return (
     <Card sx={{ maxWidth: 345 }}>
       <CardMedia
@@ -44,11 +55,13 @@ function ProductCard(data) {
         alt="green iguana"
       />
       <CardContent>
-      <CardActionArea href='/test'>
+      {/*
+       <CardActionArea onClick={() => ProductDetail(data.data)}> 
+      
+      */}
         <ProductName gutterBottom variant="h5" component="div">
-                {data.data.ProductName}
+          <Link to={to}>{data.data.ProductName}</Link>
         </ProductName>
-      </CardActionArea>
         <ProductIntroduction variant="body2" color="text.secondary">
           {data.data.ProductIntroduction}
         </ProductIntroduction>
