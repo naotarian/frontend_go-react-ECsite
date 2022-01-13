@@ -8,6 +8,8 @@ import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
 import Review from '../Parts/Review';
 import ReadReview from '../Parts/ReadReview';
+import CartButton from '../Molecules/Buttons/CartButton'
+import PurchaseButton from '../Molecules/Buttons/PurchaseButton'
 import "../css/common.css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -27,6 +29,12 @@ const ItemGrid = styled(Grid)`
   padding: 1rem;
   text-align: center;
 `
+const Buttons = styled(Grid)`
+  float: right;
+  display: flex;
+  width: 300px;
+  justify-content: space-between;
+`
 const TextGrid = styled(Grid)`
   text-align: left;
   padding: 1rem;
@@ -42,22 +50,22 @@ function ProductDetail(data) {
     return (
      <Box sx={{ flexGrow: 1 }}>
         <Grid container spacing={4} columns={{ xs: 1, sm: 6, md: 12 }}>
-          <ItemGrid item xs={7}>
+          <ItemGrid item xs={1} sm={6} md={7}>
             <ImageGrid>
               <Swiper navigation={true} className="mySwiper">
                 <SwiperSlide>
-                  <img src={TestImage} alt="アイコン" />
+                  <img src={TestImage} alt="アイコン" className="mw_100" />
                 </SwiperSlide>
                 <SwiperSlide>
-                  <img src={TestImage} alt="アイコン" />
+                  <img src={TestImage} alt="アイコン" className="mw_100" />
                 </SwiperSlide>
                 <SwiperSlide>
-                  <img src={TestImage} alt="アイコン" />
+                  <img src={TestImage} alt="アイコン" className="mw_100" />
                 </SwiperSlide>
               </Swiper>
             </ImageGrid>
           </ItemGrid>
-          <TextGrid item xs={5}>
+          <TextGrid item xs={1} sm={6} md={5}>
             <Grid className="produnc_name">{ProductData.ProductName}</Grid>
             <Grid>{ProductData.ProductIntroduction}</Grid>
             <>
@@ -66,13 +74,17 @@ function ProductDetail(data) {
                   <Grid>{ProductData.Price}円/税込</Grid>
                 </Grid>
                 ) : (
-                <Grid className="c_red fwb fs_14 flex">
+                <Grid className="c_red fwb fs_14 flex tar">
                   <del className="mr_20">{ProductData.Price}円/税込</del>
                   <Grid className="mr_20">→</Grid>
                   <Grid>{AfterPrice}円/税込</Grid>
                 </Grid>
                 )}                
             </>
+            <Buttons className="mt_20">
+              <CartButton />
+              <PurchaseButton />
+            </Buttons>
           </TextGrid>
         </Grid>
         <Review />
