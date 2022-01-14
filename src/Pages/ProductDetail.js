@@ -46,7 +46,6 @@ function ProductDetail(data) {
     if(ProductData.DiscountRate != 0) {
       AfterPrice = ProductData.Price - (ProductData.Price / ProductData.DiscountRate);
     }
-    console.log(ProductData.DiscountRate)
     return (
      <Box sx={{ flexGrow: 1 }}>
         <Grid container spacing={4} columns={{ xs: 1, sm: 6, md: 12 }}>
@@ -83,7 +82,7 @@ function ProductDetail(data) {
             </>
             <Buttons className="mt_20">
               <CartButton />
-              <PurchaseButton />
+              <PurchaseButton data={ProductData} />
             </Buttons>
           </TextGrid>
         </Grid>

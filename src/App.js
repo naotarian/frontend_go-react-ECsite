@@ -10,6 +10,7 @@ import { BrowserRouter, Route, Switch, Link } from 'react-router-dom';
 import Top from './Pages/Top';
 import ProductDetail from './Pages/ProductDetail';
 import Header from './Parts/Header';
+import ProductConfirm from './Pages/ProductConfirm'
 
 const WrapperGrid = styled(Grid)`
   width: 100%;
@@ -30,6 +31,7 @@ function App() {
           <Switch>
             <Route exact path="/" component={Top} />
             <Route exact path="/product_detail" component={ProductDetail} />
+            <Route exact path="/item_confirm" component={ProductConfirm} />
           </Switch>
         </BrowserRouter>
       </ContentsGrid>
