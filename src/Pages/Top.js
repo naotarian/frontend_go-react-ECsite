@@ -20,15 +20,15 @@ function Top() {
         });
     }, [])
     return (
-        <Box sx={{ flexGrow: 1 }}>
-            <Grid container spacing={4} columns={{ xs: 1, sm: 6, md: 12 }}>
-                {products.map((product, index) => (
-                    <ItemGrid item xs={2} sm={4} md={3} key={index}>
-                      <ProductCard data={product} />
-                    </ItemGrid>
-                ))}
-            </Grid>
-        </Box>
+      <Box sx={{ flexGrow: 1 }}>
+          <Grid container spacing={4} columns={{ xs: 1, sm: 6, md: 12 }}>
+              {products.map((product, index) => (
+                  <ItemGrid item xs={2} sm={4} md={3} key={index}>
+                    <ProductCard data={product} />
+                  </ItemGrid>
+              ))}
+          </Grid>
+      </Box>
     );
 }
   export default Top;
