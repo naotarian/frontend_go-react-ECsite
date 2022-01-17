@@ -36,7 +36,6 @@ const FlexGrid = styled(Grid)`
 `
 
 function ProductConfirm(data) {
-    console.log(data.location.state.data.data)
     return(
         <Grid>
             <PageTitle>

@@ -81,6 +81,9 @@
 .mt_19 {margin-top: 1.9rem;}
 .mt_20 {margin-top: 2rem;}
 
+.p0 {
+    padding: 0!important;
+}
 .flex {
     display: flex;
 }
@@ -92,3 +95,12 @@
 .tac {text-align: center;}
 .tar {text-align: right;}
 .tal {text-align: left;}
+li {
+    list-style: none;
+}
+ul {
+    padding: none!important;
+}
+.MuiButton-startIcon {
+    margin: 0!important;
+}

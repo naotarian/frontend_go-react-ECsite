@@ -10,6 +10,7 @@ import Review from '../Parts/Review';
 import ReadReview from '../Parts/ReadReview';
 import CartButton from '../Molecules/Buttons/CartButton'
 import PurchaseButton from '../Molecules/Buttons/PurchaseButton'
+import FloatingBtn from '../Molecules/Flattery'
 import "../css/common.css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -81,13 +82,14 @@ function ProductDetail(data) {
                 )}                
             </>
             <Buttons className="mt_20">
-              <CartButton />
+              <CartButton data={ProductData} />
               <PurchaseButton data={ProductData} />
             </Buttons>
           </TextGrid>
         </Grid>
         <Review />
         <ReadReview />
+        <FloatingBtn data={ProductData} />
       </Box>
     )
 }
