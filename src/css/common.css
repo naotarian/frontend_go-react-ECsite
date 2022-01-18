@@ -104,3 +104,14 @@ ul {
 .MuiButton-startIcon {
     margin: 0!important;
 }
+.mx100 {
+    max-width: 100%;
+}
+.sp_block {
+    display: flex;
+}
+@media (max-width:767px) {
+    .sp_block {
+        display: block;
+    }
+}
